@@ -1,4 +1,4 @@
-FROM python:3.9-slim
+FROM python:3.8-slim
 
 LABEL version="1.0.0"
 LABEL repository="https://github.com/fartbagxp/serverless-action"
