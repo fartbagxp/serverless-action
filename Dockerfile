@@ -10,8 +10,9 @@ LABEL "com.github.actions.description"="Wraps the Serverless Framework including
 LABEL "com.github.actions.icon"="zap"
 LABEL "com.github.actions.color"="green"
 
-# Install curl & xz (to install node below)
-RUN apt update && apt install -y curl xz-utils && rm -rf /var/lib/apt/lists/*
+# Install curl & xz (to install node below) and 
+# build essentials because some python libraries requires to build
+RUN apt update && apt install -y curl xz-utils build-essential && rm -rf /var/lib/apt/lists/*
 
 # Install node
 RUN curl https://nodejs.org/dist/v14.15.5/node-v14.15.5-linux-x64.tar.xz | tar xJ -C /opt
